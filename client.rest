@@ -1,0 +1,37 @@
+### AppController
+@baseUrl = http://localhost:3000
+
+###Consulta parametro URL
+GET {{baseUrl}}/recados/lioff
+?limit=100
+&offset=300
+###Consulta mensagem
+GET {{baseUrl}}/recados
+###Consulta mensagem 1
+GET {{baseUrl}}/recados/1
+###Consulta mensagem 2
+GET {{baseUrl}}/recados/2
+###Cria Mensagem
+POST {{baseUrl}}/recados/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "text": "324",
+  "from": "2342",
+  "to": "2342342"
+}
+### Atualiza mensagem
+PATCH {{baseUrl}}/recados/1
+Content-Type: application/json
+
+{
+      text: '',
+      from: '',
+      to: '',
+      read: false,
+      date: new Date(),
+}
+###Apaga um recado
+DELETE {{baseUrl}}/recados/1
+
