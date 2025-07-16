@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import { Injectable } from '@nestjs/common';
 import { UserM, UserMessage } from './menssage entity/menssage.entity';
@@ -16,7 +18,7 @@ export class RecadosService {
 
   async findAll(): Promise<UserM[]> {
     const allMessg = await this.userModel.find().exec();
-    return allMessg.map(this.format);
+    return allMessg.map((msg) => this.format(msg));
   }
 
   async findOne(id: string): Promise<UserM | null> {
