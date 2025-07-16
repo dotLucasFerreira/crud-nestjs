@@ -1,9 +1,6 @@
-import { IsDate, IsString, IsNumberString } from '@nestjs/class-validator';
+import { IsDate, IsString } from '@nestjs/class-validator';
 
 export class UserMessageDto {
-  @IsNumberString()
-  _id: number;
-
   @IsString()
   text: string;
 

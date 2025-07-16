@@ -6,8 +6,6 @@ export type UserMessage = UserM & Document;
 @Schema()
 export class UserM {
   @Prop({ required: true })
-  id: number;
-  @Prop({ required: true })
   text: string;
   @Prop({ required: true })
   from: string;
